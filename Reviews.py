@@ -14,6 +14,11 @@ from lime.lime_text import LimeTextExplainer
 import re # Importing re module for regular expressions
 from wordcloud import WordCloud # Importing WordCloud for creating word clouds
 import matplotlib.pyplot as plt
+import zipfile
+
+# Extracting the zip file
+with zipfile.ZipFile('IMDB Dataset.csv.zip', 'r') as zip_ref:
+    zip_ref.extractall('.')
 
 # Disable PyplotGlobalUseWarning
 st.set_option('deprecation.showPyplotGlobalUse', False)
