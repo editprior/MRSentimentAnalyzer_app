@@ -25,5 +25,5 @@ If any of these libraries are not already installed, they can be installed using
 ```pip install streamlit pandas scikit-learn joblib nltk matplotlib wordcloud```
 
 Additionally, NLTK's stopwords data needs to be downloaded:
-```import nltk
-nltk.download('stopwords')```
+```import nltk```
+```nltk.download('stopwords')```
