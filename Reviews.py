@@ -91,8 +91,6 @@ def create_word_cloud(word_contribution):
     wordcloud = WordCloud(width=1000, height=800, background_color='white').generate_from_frequencies(wordcloud_dict) 
     # Convert word cloud to image
     wordcloud_image = wordcloud.to_image()
-    # Display the word cloud image
-    st.image(wordcloud_image, caption='Word Cloud of Significant Words', use_column_width=True)
 
 # Streamlit app
 st.title("Movie Review Sentiment Analysis🍿")
@@ -171,4 +169,4 @@ if submit and review:
 
     # Display word cloud
     with col3:
-        create_word_cloud(word_contribution)
+        st.image(wordcloud_image, caption='Word Cloud of Significant Words', use_column_width=True)
