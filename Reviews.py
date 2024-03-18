@@ -119,7 +119,7 @@ review = st.text_area(label="Enter Review Here:", height=20)
 submit = st.button("Classify")
 
 if submit and review:
-    col1, col2 = st.columns(3, gap="medium")
+    col1, col2 = st.columns(2, gap="medium")
     word_count = len(review.split())
     st.text(f"Word Count: {word_count}")
     predicted_class, confidence = predict_sentiment(review)
