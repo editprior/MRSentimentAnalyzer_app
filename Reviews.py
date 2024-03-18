@@ -12,10 +12,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 from lime.lime_text import LimeTextExplainer
 import re # Importing re module for regular expressions
-import wordcloud
-from wordcloud import WordCloud # Importing WordCloud for creating word clouds
-import matplotlib.pyplot as plt
-import zipfile
 
 # List of CSV files to concatenate
 csv_files = ['1.csv', '2.csv', '3.csv', '4.csv', '5.csv']
@@ -83,15 +79,6 @@ def create_colored_review(review, word_contribution):
             review = re.sub(r'\b' + re.escape(word) + r'\b', f'<span style="background-color: #f8d7da">{word}</span>', review)
     return review
 
-# Function to create word cloud
-def create_word_cloud(word_contribution):
-    # Convert word contribution list to dictionary
-    wordcloud_dict = {word: abs(contribution) for word, contribution in word_contribution} 
-    # Generate a word cloud from the dictionary
-    wordcloud = WordCloud(width=1000, height=800, background_color='white').generate_from_frequencies(wordcloud_dict) 
-    # Convert word cloud to image
-    wordcloud_image = wordcloud.to_image()
-
 # Streamlit app
 st.title("Movie Review Sentiment Analysis🍿")
 # Description of the app and its usefulness
@@ -119,7 +106,6 @@ st.markdown("""
             <li><a href="https://coderzcolumn.com/tutorials/machine-learning/model-evaluation-scoring-metrics-scikit-learn-sklearn">ML Metrics Guide</a></li>
             <li><a href="https://coderzcolumn.com/tutorials/machine-learning/how-to-use-lime-to-understand-sklearn-models-predictions">LIME Guide</a></li>
             <li><a href="https://coderzcolumn.com/tutorials/python/joblib-parallel-processing-in-python">Joblib</a></li>
-            <li><a href="https://www.youtube.com/watch?v=a6JLETUoA-g&ab_channel=Pythonology">How to make a WordCloud using Python | Streamlit</a></li>
             <li><a href="https://medium.com/@nimritakoul01/nlp-with-python-part-2-nltk-cc6fe52f1a1a">NLP with Python Part 2 NLTK</a></li>
             <li><a href="https://www.pythonprog.com/natural-language-processing-nlp-in-python-with-nltk/">Natural Language Processing (NLP) in Python with NLTK</a></li>
             <li><a href="https://chat.openai.com/">Chat GPT</a></li>
@@ -133,7 +119,7 @@ review = st.text_area(label="Enter Review Here:", height=20)
 submit = st.button("Classify")
 
 if submit and review:
-    col1, col2, col3 = st.columns(3, gap="medium")
+    col1, col2 = st.columns(3, gap="medium")
     word_count = len(review.split())
     st.text(f"Word Count: {word_count}")
     predicted_class, confidence = predict_sentiment(review)
@@ -166,7 +152,3 @@ if submit and review:
         fig = explanation.as_pyplot_figure()
         fig.set_figheight(9)
         st.pyplot(fig, use_container_width=True)
-
-    # Display word cloud
-    with col3:
-        st.image(wordcloud_image, caption='Word Cloud of Significant Words', use_column_width=True)
