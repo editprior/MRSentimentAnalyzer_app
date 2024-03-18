@@ -2,6 +2,7 @@
 
 ## Overview
 This Streamlit web application analyzes the sentiment of movie reviews using Natural Language Processing (NLP) techniques and a machine learning model. Users can input a movie review, and the app will classify the sentiment as positive or negative, providing insights into the overall tone of the review.
+Check out [live demo](https://mrsentimentanalyzerapp-6tip8rygftjbnpqmfyjufc.streamlit.app/). 
 
 ## Features
 - Input a movie review and receive sentiment analysis results.
