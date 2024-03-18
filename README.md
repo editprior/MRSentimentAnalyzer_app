@@ -8,7 +8,6 @@ Check out [live demo](https://mrsentimentanalyzerapp-6tip8rygftjbnpqmfyjufc.stre
 - Input a movie review and receive sentiment analysis results.
 - Visualize the analyzed review with highlighted positive and negative words.
 - Display an explanation of the sentiment analysis using LIME (Local Interpretable Model-agnostic Explanations).
-- Generate a word cloud of significant words in the review.
 
 ## Dependencies
 This application utilizes several Python libraries to perform sentiment analysis on movie reviews:
