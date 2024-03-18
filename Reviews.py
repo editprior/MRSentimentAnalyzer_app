@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import zipfile
 
 # List of CSV files to concatenate
-csv_files = ['IMDB Dataset.csv', '2.csv', '3.csv', '4.csv', '5.csv']
+csv_files = ['1.csv', '2.csv', '3.csv', '4.csv', '5.csv']
 # Read each CSV file into a DataFrame and store them in a list
 dfs = [pd.read_csv(file) for file in csv_files]
 
