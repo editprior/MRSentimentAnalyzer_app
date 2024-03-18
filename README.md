@@ -19,11 +19,11 @@ This application utilizes several Python libraries to perform sentiment analysis
 - Joblib for saving and loading machine learning models.
 - NumPy for numerical operations.
 - Matplotlib for generating visualizations.
-- Other libraries such as String, RandomForestClassifier, TfidfVectorizer, LimeTextExplainer, re, and WordCloud are also used for various text processing and visualization tasks.
+- Other libraries such as String, RandomForestClassifier, TfidfVectorizer, LimeTextExplainer, and re are also used for various text processing and visualization tasks.
 
 ## Installation
 If any of these libraries are not already installed, they can be installed using pip:
-```pip install streamlit pandas scikit-learn joblib nltk matplotlib wordcloud```
+```pip install streamlit pandas scikit-learn joblib nltk matplotlib```
 
 Additionally, NLTK's stopwords data needs to be downloaded:
 ```import nltk```
