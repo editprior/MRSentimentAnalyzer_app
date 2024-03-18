@@ -22,10 +22,8 @@ This application utilizes several Python libraries to perform sentiment analysis
 
 ## Installation
 If any of these libraries are not already installed, they can be installed using pip:
-```bash
-pip install streamlit pandas scikit-learn joblib nltk matplotlib wordcloud```
+```pip install streamlit pandas scikit-learn joblib nltk matplotlib wordcloud```
 
 Additionally, NLTK's stopwords data needs to be downloaded:
-```bash
-import nltk
+```import nltk
 nltk.download('stopwords')```
