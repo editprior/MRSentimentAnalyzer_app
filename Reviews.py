@@ -30,7 +30,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 nltk.download('stopwords')
 
 # Load model
-@st.cache_data
+@st.cache
 def load_model():
     # Split the dataset into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(reviews_df['review'], reviews_df['sentiment'], stratify=reviews_df['sentiment'], train_size=0.8, random_state=123)
