@@ -88,7 +88,7 @@ def create_word_cloud(word_contribution):
     # Convert word contribution list to dictionary
     wordcloud_dict = {word: abs(contribution) for word, contribution in word_contribution} 
     # Generate a word cloud from the dictionary
-    wordcloud = WordCloud(width=1000, height=800, background_color='white').generate_from_frequencies(wordcloud_dict) 
+    wordcloud = WordCloud(width=1000, height=800, background_color='white', font_path='DroidSansMono.ttf').generate_from_frequencies(wordcloud_dict) 
     # Plot the word cloud
     plt.figure(figsize=(15, 12))
     plt.imshow(wordcloud, interpolation='bilinear')
