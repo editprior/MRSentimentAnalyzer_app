@@ -16,9 +16,13 @@ from wordcloud import WordCloud # Importing WordCloud for creating word clouds
 import matplotlib.pyplot as plt
 import zipfile
 
-# Extracting the zip file
-with zipfile.ZipFile('IMDB Dataset.csv.zip', 'r') as zip_ref:
-    zip_ref.extractall('.')
+# List of CSV files to concatenate
+csv_files = ['IMDB Dataset.csv', '2.csv', '3.csv', '4.csv', '5.csv']
+# Read each CSV file into a DataFrame and store them in a list
+dfs = [pd.read_csv(file) for file in csv_files]
+
+# Concatenate the DataFrames along the rows (axis=0)
+reviews_df = pd.concat(dfs, ignore_index=True)
 
 # Disable PyplotGlobalUseWarning
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -28,8 +32,6 @@ nltk.download('stopwords')
 # Load model
 @st.cache_data
 def load_model():
-    # Read the IMDb dataset
-    reviews_df = pd.read_csv('IMDB Dataset.csv')
     # Split the dataset into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(reviews_df['review'], reviews_df['sentiment'], stratify=reviews_df['sentiment'], train_size=0.8, random_state=123)
     # Create a pipeline for text classification
