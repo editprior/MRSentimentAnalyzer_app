@@ -12,6 +12,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 from lime.lime_text import LimeTextExplainer
 import re # Importing re module for regular expressions
+import wordcloud
 from wordcloud import WordCloud # Importing WordCloud for creating word clouds
 import matplotlib.pyplot as plt
 import zipfile
